@@ -128,7 +128,3 @@ git clone https://github.com/heetshah15/ds1.git
 cd ds1
 ```
 - Pick a project under `Projects/`, open its folder, install dependencies (if present), and run the app or scripts per the project's README above.
-
----
-
-If you'd like, I can commit this README for you and add the recommended `.gitignore` as a follow-up.
