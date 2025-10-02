@@ -38,7 +38,8 @@ def draw_bar_plot():
     fig = ax.figure
     ax.set_xlabel("Years")
     ax.set_ylabel("Average Page Views")
-    ax.legend(title="Months", labels=[calendar.month_abbr[i] for i in range(1, 13)], loc="upper left")
+    months = [calendar.month_name[i] for i in range(1, 13)]
+    ax.legend(title="Months", labels=months, loc="upper left")
     fig.tight_layout()
 
     # Save image and return fig (don't change this part)
@@ -54,16 +55,16 @@ def draw_box_plot():
 
     # Draw box plots (using Seaborn)
     months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
-    fig, ax = plt.subplots(1, 2, figsize=(18, 6))
+    fig, ax = plt.subplots(1, 2, figsize=(28, 10.8))
 
-    sns.boxplot(x="year", y="value", data=df_box, ax=ax[0])
+    sns.boxplot(x="year", y="value", data=df_box, ax=ax[0], palette="hls")
     ax[0].set_title('Year-wise Box Plot (Trend)')
     ax[0].set_xlabel('Year')
     ax[0].set_ylabel('Page Views')
 
-    sns.boxplot(x='month', y='value', data=df_box, order=months, ax=ax[1])
+    sns.boxplot(x='month', y='value', data=df_box, order=months, ax=ax[1], palette='hls')
     ax[1].set_title('Month-wise Box Plot (Seasonality)')
-    ax[1].set_xlabel('Year')
+    ax[1].set_xlabel('Month')
     ax[1].set_ylabel('Page Views')
 
     fig.tight_layout()
